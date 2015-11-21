@@ -12,9 +12,11 @@ sc = SparkContext("local","NYC Taxi")
 
 # Load and parse the data
 # data = sc.textFile("trip_small.csv").map(lambda line: line.split(","))
-#data = sc.textFile("triptest")
+dataFile = sc.textFile("triptest")
 
-dataFile = ("s3n://AKIAJ53BXFV4RFXYWUPA:xVn1xH+G2157ADJCxMiI4AlMYswIOMxbx+OHfDlB@data-bds/triplarge")
+
+#Run on AWS
+#dataFile = ("s3n://AKIAJ53BXFV4RFXYWUPA:xVn1xH+G2157ADJCxMiI4AlMYswIOMxbx+OHfDlB@data-bds/triplarge")
 
 
 data = sc.textFile(dataFile).cache()
