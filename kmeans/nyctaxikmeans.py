@@ -5,10 +5,6 @@ from pyspark import SparkContext
 
 
 sc = SparkContext("local","NYC Taxi")
-# hadoopConf=sc.hadoopConfiguration;
-# hadoopConf.set("fs.s3.impl", "org.apache.hadoop.fs.s3native.NativeS3FileSystem")
-# hadoopConf.set("fs.s3.awsAccessKeyId","AKIAI4MS5VYETN2IPC3Q")
-# hadoopConf.set("fs.s3.awsSecretAccessKey","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")
 
 # Load and parse the data
 # data = sc.textFile("trip_small.csv").map(lambda line: line.split(","))
