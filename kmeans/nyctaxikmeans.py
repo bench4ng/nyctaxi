@@ -16,7 +16,7 @@ dataFile = sc.textFile("triptest")
 
 
 #Run on AWS
-#dataFile = ("s3n://AKIAJ53BXFV4RFXYWUPA:xVn1xH+G2157ADJCxMiI4AlMYswIOMxbx+OHfDlB@data-bds/triplarge")
+#dataFile = ("s3n://accesskey:secretkey@rep-name/repos")
 
 
 data = sc.textFile(dataFile).cache()
