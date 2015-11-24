@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Transit layer</title>
+<style>
+html, body, #map-canvas {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px
+}
+</style>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script> 
+function mapLocation() {
+    var directionsDisplay;
+		var directionsDisplay1;
+		var directionsDisplay2;
+		var directionsDisplay3;
+		var directionsDisplay4;
+    var directionsService = new google.maps.DirectionsService();
+		var directionsService1 = new google.maps.DirectionsService();
+		var directionsService2 = new google.maps.DirectionsService();
+		var directionsService3 = new google.maps.DirectionsService();
+		var directionsService4 = new google.maps.DirectionsService();
+    var map;
+
+    function initialize() {
+        directionsDisplay = new google.maps.DirectionsRenderer();
+				directionsDisplay1 = new google.maps.DirectionsRenderer();
+				directionsDisplay2 = new google.maps.DirectionsRenderer();
+				directionsDisplay3 = new google.maps.DirectionsRenderer();
+				directionsDisplay4 = new google.maps.DirectionsRenderer();
+        var ny = new google.maps.LatLng(37.334818, -121.884886);
+        var mapOptions = {
+            zoom: 7,
+            center: ny
+        };
+        map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        directionsDisplay.setMap(map);
+        google.maps.event.addDomListener(document.getElementById('routebtn'), 'click', calcRoute);
+    }
+
+
+    function calcRoute() {
+        var start = new google.maps.LatLng(37.334818, -121.884886);
+        var end = new google.maps.LatLng(37.441883, -122.143019);
+        var bounds = new google.maps.LatLngBounds();
+        bounds.extend(start);
+        bounds.extend(end);
+        map.fitBounds(bounds);
+        var request = {
+            origin: start,
+            destination: end,
+            travelMode: google.maps.TravelMode.DRIVING
+        };
+        directionsService.route(request, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+                directionsDisplay.setMap(map);
+            } else {
+                alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
+            }
+        });
+
+				var start = new google.maps.LatLng(37.364818, -121.984886);
+        var end = new google.maps.LatLng(37.551883, -122.243019);
+        var bounds = new google.maps.LatLngBounds();
+        bounds.extend(start);
+        bounds.extend(end);
+        map.fitBounds(bounds);
+        var request = {
+            origin: start,
+            destination: end,
+            travelMode: google.maps.TravelMode.DRIVING
+        };
+        directionsService1.route(request, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay1.setDirections(response);
+                directionsDisplay1.setMap(map);
+            } else {
+                alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
+            }
+        });
+
+				var start = new google.maps.LatLng(37.464818, -121.914886);
+        var end = new google.maps.LatLng(37.511883, -122.343019);
+        var bounds = new google.maps.LatLngBounds();
+        bounds.extend(start);
+        bounds.extend(end);
+        map.fitBounds(bounds);
+        var request = {
+            origin: start,
+            destination: end,
+            travelMode: google.maps.TravelMode.DRIVING
+        };
+        directionsService2.route(request, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay2.setDirections(response);
+                directionsDisplay2.setMap(map);
+            } else {
+                alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
+            }
+        });
+
+				var start = new google.maps.LatLng(37.264818, -121.714886);
+        var end = new google.maps.LatLng(37.411883, -122.353019);
+        var bounds = new google.maps.LatLngBounds();
+        bounds.extend(start);
+        bounds.extend(end);
+        map.fitBounds(bounds);
+        var request = {
+            origin: start,
+            destination: end,
+            travelMode: google.maps.TravelMode.DRIVING
+        };
+        directionsService3.route(request, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay3.setDirections(response);
+                directionsDisplay3.setMap(map);
+            } else {
+                alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
+            }
+        });
+
+				var start = new google.maps.LatLng(37.294818, -121.624886);
+        var end = new google.maps.LatLng(37.341883, -122.313019);
+        var bounds = new google.maps.LatLngBounds();
+        bounds.extend(start);
+        bounds.extend(end);
+        map.fitBounds(bounds);
+        var request = {
+            origin: start,
+            destination: end,
+            travelMode: google.maps.TravelMode.DRIVING
+        };
+        directionsService4.route(request, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay4.setDirections(response);
+                directionsDisplay4.setMap(map);
+            } else {
+                alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
+            }
+        });
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+}
+mapLocation();
+    </script>
+</head>
+<body>
+<input id="routebtn" type="button" value="route" />
+<div id="map-canvas"></div>
+</body>
+</html>
