@@ -12,15 +12,7 @@
 * Conclusion
 
 
-## To Dos
 
-* Fare prediction using regression (Accuracy, Stats)
-* Clustering and traffic densitie (Optimal k, error, stats)
-* Data input for visualization
-* Modifying visualization template to fit the data
-* Time-series part (Taking a location and analysis of its traffic, visualization for the same)
-* Picking most used routes and fitting visualization for the same
-* Running Clustering/Regression on AWS and producing stats
 
 ## Done
 
@@ -28,3 +20,11 @@
 * Regression codes running
 * Visualizations template running
 * Exploration part done
+* * Fare prediction using regression (Accuracy, Stats)
+* Clustering and traffic densitie (Optimal k, error, stats)
+* Data input for visualization
+* Modifying visualization template to fit the data
+* Time-series part (Taking a location and analysis of its traffic, visualization for the same)
+* Picking most used routes and fitting visualization for the same
+* Running Clustering/Regression on AWS and producing stats
+
