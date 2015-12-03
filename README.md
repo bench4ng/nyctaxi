@@ -19,7 +19,13 @@ The .ipynb files are the IPython notebooks, which are used for data exploration 
 ###./visualizations/
 This folder contains the visulization code used to generate the Google Map visuals, depicting the most popular taxi-routes in New York City. It leverages JavaScript and HTML, as well as Google Maps API.  
 
-  
+###AWS
+You would first need to launch an AWS EMR cluster comfigured with Spark and Ganglia. This project utilized 20 nodes (1 master and 19 slaves) which were of the m2.xlarge configuration. Next the Spark environment needs to be set up in the local machine and you would need to get the URL of the master node. 
 
+Next you would need to upload the data for the trip records to S3. This is achieved using AWS CLI tool for this project.
+
+Post this step, you can run the following command to run the Spark job on your EMR clusters
+
+bin/spark-submit --packages org.apache.hadoop:hadoop-aws:2.7.1 --master spark://url-of-emr-master-node nyctaxikmeans.py 
 
 
