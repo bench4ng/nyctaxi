@@ -1,30 +1,23 @@
 # NYC Taxi Data Analysis
 
-## Presentation
+
+This document contains the descriptions of all the code components present in our system, and how they are meant to be used.  
+
+###./k-means/  
+This folder contains the PySpark code to perform K-means clustering on the txi data, using MLlib. Your system needs to have Spark installed and working to run this. Alternative, it can also be deployed as a spark-job on EMR clusters.  
+
+###./*.ipynb  
+The .ipynb files are the IPython notebooks, which are used for data exploration and cleaning, as well as analysis of trends observed in the data. The system needs to have Anaconda installed to run the IPython notebooks. They are split into multiple ode chunks, with chunk performing a particular task. This allows us to execute one task at a time, rather than all at once. These notebooks are also used to create some visualization charts to describe the general trends observed in the data.  
+
+###./visualizations/
+This folder contains the visulization code used to generate the Google Map visuals, depicting the most popular taxi-routes in New York City. It leverages JavaScript and HTML, as well as Google Maps API.  
+
   
-* What's the Problem? Why is it significant?
-* Exploratory Analysis (Panda)
-* Clustering (Density of Traffic)
-* Regression (Fare, Tip predictions)
-* Visualizations (Most Used Routes, Cluster Densities)
-* Time-Series (Picking a location and analyzing its traffic over a period of time)
-* Big Data (Run-Time, Accuracy stats, AWS)
-* Conclusion
+###The Data:
+Te NYC taxi data was originally through a Freedom of Information Law (FOIL) request from the New York City Taxi & Limousine Commission (NYCT&L). The dataset is available for download publicly at multiple hosting sites. You can download the data from any of the following links:  
+http://www.andresmh.com/nyctaxitrips/  
+OR  
+https://uofi.app.box.com/NYCtaxidata
 
 
-
-
-## Done
-
-* Clustering codes running
-* Regression codes running
-* Visualizations template running
-* Exploration part done
-* * Fare prediction using regression (Accuracy, Stats)
-* Clustering and traffic densitie (Optimal k, error, stats)
-* Data input for visualization
-* Modifying visualization template to fit the data
-* Time-series part (Taking a location and analysis of its traffic, visualization for the same)
-* Picking most used routes and fitting visualization for the same
-* Running Clustering/Regression on AWS and producing stats
 

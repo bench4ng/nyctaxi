@@ -27,12 +27,37 @@ function mapLocation() {
     var map;
 
     function initialize() {
-        directionsDisplay = new google.maps.DirectionsRenderer();
-				directionsDisplay1 = new google.maps.DirectionsRenderer();
-				directionsDisplay2 = new google.maps.DirectionsRenderer();
-				directionsDisplay3 = new google.maps.DirectionsRenderer();
-				directionsDisplay4 = new google.maps.DirectionsRenderer();
-        var ny = new google.maps.LatLng(37.334818, -121.884886);
+        directionsDisplay = new google.maps.DirectionsRenderer(({suppressMarkers: false, polylineOptions: polylineOptionsActual}));
+        var polylineOptionsActual = {
+      strokeColor: '#FF0000',
+      strokeOpacity: 1.0,
+      strokeWeight: 10
+      };
+				directionsDisplay1 = new google.maps.DirectionsRenderer(({suppressMarkers: false, polylineOptions: polylineOptionsActual}));
+                var polylineOptionsActual1 = {
+      strokeColor: '#00FF00',
+      strokeOpacity: 1.0,
+      strokeWeight: 10
+      };
+				directionsDisplay2 = new google.maps.DirectionsRenderer(({suppressMarkers: false, polylineOptions: polylineOptionsActual1}));
+                var polylineOptionsActual2 = {
+      strokeColor: '#0000FF',
+      strokeOpacity: 1.0,
+      strokeWeight: 10
+      };
+				directionsDisplay3 = new google.maps.DirectionsRenderer(({suppressMarkers: false, polylineOptions: polylineOptionsActual2}));
+                var polylineOptionsActual3 = {
+      strokeColor: '#000000',
+      strokeOpacity: 1.0,
+      strokeWeight: 10
+      };
+				directionsDisplay4 = new google.maps.DirectionsRenderer(({suppressMarkers: false, polylineOptions: polylineOptionsActual3}));
+                var polylineOptionsActual4 = {
+      strokeColor: '#FFFFFF',
+      strokeOpacity: 1.0,
+      strokeWeight: 10
+      };
+        var ny = new google.maps.LatLng(40.74, -73.98);
         var mapOptions = {
             zoom: 7,
             center: ny
@@ -44,8 +69,8 @@ function mapLocation() {
 
 
     function calcRoute() {
-        var start = new google.maps.LatLng(37.334818, -121.884886);
-        var end = new google.maps.LatLng(37.441883, -122.143019);
+        var start = new google.maps.LatLng(40.75, -73.98);
+        var end = new google.maps.LatLng(40.75, -73.97);
         var bounds = new google.maps.LatLngBounds();
         bounds.extend(start);
         bounds.extend(end);
@@ -64,8 +89,8 @@ function mapLocation() {
             }
         });
 
-				var start = new google.maps.LatLng(37.364818, -121.984886);
-        var end = new google.maps.LatLng(37.551883, -122.243019);
+				var start = new google.maps.LatLng(40.74, -73.98);
+        var end = new google.maps.LatLng(40.75, -73.97);
         var bounds = new google.maps.LatLngBounds();
         bounds.extend(start);
         bounds.extend(end);
@@ -84,8 +109,8 @@ function mapLocation() {
             }
         });
 
-				var start = new google.maps.LatLng(37.464818, -121.914886);
-        var end = new google.maps.LatLng(37.511883, -122.343019);
+				var start = new google.maps.LatLng(40.76, -73.96);
+        var end = new google.maps.LatLng(40.77, -73.95);
         var bounds = new google.maps.LatLngBounds();
         bounds.extend(start);
         bounds.extend(end);
@@ -104,8 +129,8 @@ function mapLocation() {
             }
         });
 
-				var start = new google.maps.LatLng(37.264818, -121.714886);
-        var end = new google.maps.LatLng(37.411883, -122.353019);
+				var start = new google.maps.LatLng(40.76, -73.96);
+        var end = new google.maps.LatLng(40.75, -73.97);
         var bounds = new google.maps.LatLngBounds();
         bounds.extend(start);
         bounds.extend(end);
@@ -124,8 +149,8 @@ function mapLocation() {
             }
         });
 
-				var start = new google.maps.LatLng(37.294818, -121.624886);
-        var end = new google.maps.LatLng(37.341883, -122.313019);
+				var start = new google.maps.LatLng(40.75, -73.97);
+        var end = new google.maps.LatLng(40.74, -73.98);
         var bounds = new google.maps.LatLngBounds();
         bounds.extend(start);
         bounds.extend(end);
